@@ -1,0 +1,60 @@
+**Analysis Notes – Shark Attacks**
+
+**Dataset**
+- File: Shark attacks.xlsx  
+- Sheet: attacks  
+- Columns include: Case Number, Year, Type, Country, Area, Location, Activity, Sex, Age, Injury, Fatal (Y/N), Time, Species  
+
+**Cleaning steps (Power Query)**
+1. Remove empty rows.  
+2. Keep only the first Case Number column (delete duplicates like Case Number.1, Case Number.2).  
+3. Fix casing in Country, Area, Location, Activity (Capitalize Each Word).  
+4. Set Year and Age as Whole Numbers.  
+5. Standardize values:  
+   - Sex → only `M`, `F`, `Unknown`.  
+   - Fatal (Y/N) → only `Y` or `N` (blank = N).  
+   - Type → only `Unprovoked`, `Provoked`, `Boat`, `Unknown`.  
+
+**DAX measures (for cards)**
+Total Attacks = COUNTROWS('attacks')
+
+Fatal Attacks =
+CALCULATE([Total Attacks], TRIM('attacks'[Fatal (Y/N)]) = "Y")
+
+Fatality Rate % =
+DIVIDE([Fatal Attacks], [Total Attacks], 0)
+
+Average Age = AVERAGE('attacks'[Age])
+
+**Dashboard layout**
+
+Side row (Cards):
+
+**Total Attacks
+Fatal Attacks
+Fatality Rate %
+Average Age**
+
+Middle row (Charts):
+
+**Top 7 Countries with highest fatality attacks
+Fatal Attacks cases by Type (bar chart)
+Number and fatal Attacks by Activity (bar chart)**
+
+Bottom row (Charts):
+
+**Total Attacks by sex (pie chart)
+Total attacks by specie (tree map)**
+
+Slicers (filters):
+**Year
+Country**
+
+Insights from the dashboard
+
+Most attacks are unprovoked.
+USA, Australia, and South Africa account for the majority.
+Surfing and swimming are the riskiest activities.
+Fatality rate is low – quick medical care saves lives.
+Males are attacked far more often.
+White and Tiger sharks appear most frequently.
