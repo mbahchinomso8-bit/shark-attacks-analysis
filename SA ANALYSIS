@@ -1,0 +1,29 @@
+**Shark Attacks – Power BI Dashboard**
+
+**Overview**
+This project analyzes global **shark attack incidents** from the Shark Attacks dataset.  
+The dashboard shows overall attack numbers, fatality rates, risk by activity, and species involved.  
+It helps shift the story from fear to facts.
+
+**Key Insights**
+**Fatality rate is low** – most shark attacks are survivable.  
+**Top 3 countries**: USA, Australia, South Africa.  
+**Most common activities**: Surfing and swimming.  
+**Victims**: Mostly male
+**Species**: White sharks and Tiger sharks appear most often, but many cases list “Unknown.”  
+**Trend**: Reported cases rise over time, due to more people in the water and better reporting.  
+
+**Risks**
+- Tourism industries face image risks after fatal events.  
+- Public safety depends on patrol readiness and first-aid access.  
+- Data quality is patchy: many “Unknown species” entries.  
+
+**Recommendations**
+1. Targeted safety campaigns for surfers and swimmers.  
+2. Deploy rescue resources in top attack regions.  
+3. Improve species identification in reporting.  
+4. Train coastal patrols in rapid response to reduce fatalities.  
+
+**Files**
+- Power BI dashboard  
+- cleaning steps, formulas, and visuals  
